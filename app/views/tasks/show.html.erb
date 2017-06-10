@@ -1,0 +1,12 @@
+<h1>Task: </h1>
+	
+
+<table id="book" border="3" layout= "fixed" width=" 70%">
+
+<% @task.each do |f| %>
+ <tr> 
+  <td><%= f.name %>
+  <%= f.start_date %>
+  <%= f.end_date %>
+</tr>
+<% end %>

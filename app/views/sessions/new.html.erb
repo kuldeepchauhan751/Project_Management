@@ -1,0 +1,26 @@
+<h1> <b><center> Welcome To Management System</center></b></h1>
+
+<% provide(:title, "LOG IN") %>
+<p>New user? <%= link_to "Sign up now!",  new_user_path %></p>
+<h2>LOG IN</h2>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+
+<%= f.label :email  %> 
+
+<%= f.text_field :email , placeholder: "Email" %>
+
+<%= f.label :password %>
+<%= f.password_field :password , placeholder: "Password" %>
+
+<%= f.submit "Log in", class: "btn btn-primary" %>
+<% end %>
+
+
+</div>
+</div>
+
+

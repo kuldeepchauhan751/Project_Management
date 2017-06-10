@@ -1,0 +1,12 @@
+<h1>Project: </h1>
+	
+
+<table id="book" border="3" layout= "fixed" width=" 70%">
+
+<% @project.each do |f| %>
+ <tr> 
+  <td><%= f.name %>
+  <%= f.start_date %>
+  <%= f.end_date %>
+</tr>
+<% end %>
