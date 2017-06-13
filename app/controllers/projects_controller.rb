@@ -9,11 +9,13 @@ class ProjectsController < ApplicationController
   end
 
   def create
-  	@user=User.find_by(id: current_user.id)
-  	@project=@user.projects.build(project_params)
+  	@user=User.find_by_id(current_user.id)
+  	@project=@user.projects.new(project_params)
+    
   	if @project.save
+
   		flash[:notice] = "Project create Successfully"
-        redirect_to @projects
+        redirect_to projects_path
     
     else
     	render 'new'

@@ -29,6 +29,6 @@ before_action :require_user,only: [:index,:show]
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :image, :email,:security_check,:password)
+      params.require(:user).permit(:first_name,:last_name,:isowner,:email,:password)
     end
 end

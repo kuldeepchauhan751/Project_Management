@@ -1,2 +1,16 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<%= link_to "Logout!", logout_path %>
+
+<h1>Task: </h1>
+	
+
+<table id="book" border="3" layout= "fixed" width=" 50%">
+
+<% @tasks.each do |f| %>
+ <tr> 
+  <td><%= f.name %><br />
+  	<td><%= f.start_date %><br />
+  <td><%= f.end_date %><br />
+</tr>
+<% end %>
+
+<%= link_to " Create Projects!", new_project_path %>

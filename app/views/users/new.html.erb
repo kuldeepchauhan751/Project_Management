@@ -6,7 +6,7 @@
   <h3>
 <%= pluralize(@user.errors.count,"error") %>
 prohibited this user from being saved:
-</h2>
+</h3>
 <ul>
   <% @user.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
@@ -37,10 +37,13 @@ prohibited this user from being saved:
     <%= f.email_field :email, placeholder: "Email" %>
   </p>
 
-  <p>
-    <%= f.label :what_is_your_favourite_question? %>
-    <%= f.text_field :security_check, placeholder: "Enter the Question" %>
-  </p>
+ 
+    <%= f.label :what_you_are? %><br />
+    <%= f.label :autolyse, "Project Owner", :value => "true"  %>
+    <%= f.radio_button :isowner, true %>
+    <%= f.label :autolyse, "Developer", :value => "false" %>
+    <%= f.radio_button :isowner, false, :checked => true %>
+
 
   <p>
     <%= f.label :password %>

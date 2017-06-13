@@ -3,11 +3,13 @@
 <h1>Projects: </h1>
 	
 
-<table id="book" border="3" layout= "fixed" width=" 70%">
+<table id="book" border="3" layout= "fixed" width=" 50%">
 
 <% @projects.each do |f| %>
  <tr> 
-  <td><%= f.name %><br /><%= f.start_date %><br /><%= f.end_d %><br />
+  <td><%= f.name %><br />
+  	<td><%= f.start_date %><br />
+  <td><%= f.end_date %><br />
 </tr>
 <% end %>
 

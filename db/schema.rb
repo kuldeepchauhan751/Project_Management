@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170610084624) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,16 +25,18 @@ ActiveRecord::Schema.define(version: 20170610084624) do
     t.string "name"
     t.date "start_date"
     t.date "end_date"
+    t.integer "project_id"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "image"
+    t.boolean "isowner", default: false
     t.string "email"
-    t.string "security_check"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

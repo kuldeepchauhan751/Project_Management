@@ -9,20 +9,21 @@ class TasksController < ApplicationController
   end
 
   def create
-  	@user=User.find_by(id: current_user.id)
-  	@task=@user.tasks.new(project_params)
+    @project=Project.find(params[:project_id])
+  	@task=@user.tasks.create(project_params,owner_id: current_user.id)
   	if @task.save
   		flash[:notice] = "Task create Successfully"
-        redirect_to projects_path
+        redirect_to tasks_path
     else
-    	render 'new'
-
-  		
+    	render 'new'	
   	end
   end
 
   def show
   end
-
+private
+    def task_params
+      params.require(:task).permit(:name,:start_date,:end_date)
+    end
   
 end
